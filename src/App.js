@@ -101,27 +101,27 @@ function App() {
             <Title title='Portfolio' />
             <div className='cards-wrapper'>
             <Card>
-              <CardImg className={shareishCard.class} source='/images/shareishsnipped.png' />
+              <CardImg className={shareishCard.class} source='images/shareishsnipped.png' />
               <CardInfo title='Shareish' text='Shareish is an app that allows users to rent out and rent unused items such as tools, electronics, yard equipment, etc.' gihub='https://github.com/Brigmu/Sharemasters' deployed='https://ancient-crag-34328.herokuapp.com/' />
               {shareishCard.active ? <ViewBtn card='shareish' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='shareish' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg className= {craveItCard.class} source='/images/craveitsnipped.png' />
+              <CardImg className= {craveItCard.class} source='images/craveitsnipped.png' />
               <CardInfo title ='Crave it' text='Crave it is an app that allows users to search for food recipes by category' github='https://github.com/crispysodium/crave_masters' deployed='https://crispysodium.github.io/crave_masters/'/>
               {craveItCard.active ? <ViewBtn card='craveit' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='craveit' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg className={headcountCard.class} source='/images/Headcountmanagersnipped.png' />
+              <CardImg className={headcountCard.class} source='images/Headcountmanagersnipped.png' />
               <CardInfo title='Headcount Manager' text='Headcount manager is an app for tracking headcount at a company by country and department' github='https://github.com/macheson/headcount-tracker/' deployed='https://dry-waters-35769.herokuapp.com/'/>
               {headcountCard.active ? <ViewBtn card='headcount' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='headcount' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg className={googleBooksCard.class} source='/images/googlebookssnipped.png' />
+              <CardImg className={googleBooksCard.class} source='images/googlebookssnipped.png' />
               <CardInfo title='Google Books Search' text='An app that allows the users to search google books and then save books they like to a database' github ='https://github.com/Brigmu/Google-books-search' deployed='https://mygooglebookssearch.herokuapp.com/' />
               {googleBooksCard.active ? <ViewBtn card='googlebooks' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='googlebooks' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg className={employeeDirectoryCard.class} source='/images/employeedirectorysnipped.png' />
+              <CardImg className={employeeDirectoryCard.class} source='images/employeedirectorysnipped.png' />
               <CardInfo title='Employee Directory' text='This is a practice app testing out react state to manage an directory of employees' github='https://github.com/Brigmu/Employee-Directory' deployed='https://brigmu.github.io/Employee-Directory/' />
               {employeeDirectoryCard.active ? <ViewBtn card='employeedirectory' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='employeedirectory' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
