@@ -1,0 +1,12 @@
+.card-info {
+    position: absolute;
+    box-sizing: border-box;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    transition: width 250ms ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
