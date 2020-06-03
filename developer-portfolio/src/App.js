@@ -8,17 +8,55 @@ import CardImg from './Components/CardImg/index';
 import CardInfo from './Components/CardInfo';
 import Navlink from './Components/Navlink/Navlink';
 import Title from './Components/Title/Title';
+import ViewBtn from './Components/ViewBtn/ViewBtn';
 
 function App() {
-  const [active, setActive] = useState(false);
-  const [imgClass, setImgClass] = useState('card-img');
-  const handleCardImgClassChange = (id) => {
-    if(active){
-      setImgClass('card-img')
-      setActive(false);
-    } else{
-      setImgClass('card-img-active')
-      setActive(true);
+  const [shareishCard, setShareishCard] = useState({class: 'card-img', active: false})
+  const [craveItCard, setCraveItCard] = useState({class: 'card-img', active: false})
+  const [headcountCard, setHeadcountCard] = useState({class: 'card-img', active: false})
+  const [employeeDirectoryCard, setEmployeeDirectoryCard] = useState({class: 'card-img', active: false})
+  const [googleBooksCard, setGoogleBooksCard] = useState({class: 'card-img', active: false})
+
+  const handleCardImgClassChange = (e) => {
+    const card = e.target.getAttribute('data-card');
+    switch(card){
+      case 'shareish':
+        if(shareishCard.active){
+          setShareishCard({class: 'card-img', active: false})
+        } else {
+          setShareishCard({class: 'card-img-active', active: true})
+        }
+      break;
+      case 'headcount':
+        if(headcountCard.active){
+          setHeadcountCard({class: 'card-img', active: false})
+        } else{
+          setHeadcountCard({class: 'card-img-active', active: true})
+        }
+      break;
+      case 'craveit':
+        if(craveItCard.active){
+          setCraveItCard({class: 'card-img', active: false})
+        } else {
+          setCraveItCard({class: 'card-img-active', active: true})
+        }
+      break;
+      case 'googlebooks':
+        if(googleBooksCard.active){
+          setGoogleBooksCard({class: 'card-img', active: false})
+        } else {
+          setGoogleBooksCard({class: 'card-img-active', active: true})
+        }
+      break;
+      case 'employeedirectory':
+        if(employeeDirectoryCard.active){
+          setEmployeeDirectoryCard({class: 'card-img', active: false})
+        } else {
+          setEmployeeDirectoryCard({class: 'card-img-active', active: true})
+        }
+      break;
+      default:
+        console.log('oops');
     }
   }
   return (
@@ -33,7 +71,7 @@ function App() {
           <Wrapper name='about-wrapper' id='about'>
             <Title title='About' />
             <div className='inner-wrapper'>
-            <img src='../../../images/Portfolio-photo.jpg'></img>
+            <img src='/images/Portfolio-photo.jpg' alt='profile'></img>
             <div className='p-div'>
             <p>My name is Brigham Mueller and this website was made to tell a little bit about myself and show what
                     I can do. I am a full-stack web developer, gamer, home chef, and dad joke extraordinaire.
@@ -63,16 +101,29 @@ function App() {
             <Title title='Portfolio' />
             <div className='cards-wrapper'>
             <Card>
-              <CardImg className= {imgClass} source='../../../images/craveitsnipped.png' />
+              <CardImg className={shareishCard.class} source='/images/shareishsnipped.png' />
+              <CardInfo title='Shareish' text='Shareish is an app that allows users to rent out and rent unused items such as tools, electronics, yard equipment, etc.' gihub='https://github.com/Brigmu/Sharemasters' deployed='https://ancient-crag-34328.herokuapp.com/' />
+              {shareishCard.active ? <ViewBtn card='shareish' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='shareish' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
+            </Card>
+            <Card>
+              <CardImg className= {craveItCard.class} source='/images/craveitsnipped.png' />
               <CardInfo title ='Crave it' text='Crave it is an app that allows users to search for food recipes by category' github='https://github.com/crispysodium/crave_masters' deployed='https://crispysodium.github.io/crave_masters/'/>
-              {active ? <button onClick={handleCardImgClassChange} className='button view-less'>View less</button> : <button className='button view-more' onClick={handleCardImgClassChange}>View info</button>}
+              {craveItCard.active ? <ViewBtn card='craveit' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='craveit' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg source='../../../images/Headcountmanagersnipped.png' />
-              
+              <CardImg className={headcountCard.class} source='/images/Headcountmanagersnipped.png' />
+              <CardInfo title='Headcount Manager' text='Headcount manager is an app for tracking headcount at a company by country and department' github='https://github.com/macheson/headcount-tracker/' deployed='https://dry-waters-35769.herokuapp.com/'/>
+              {headcountCard.active ? <ViewBtn card='headcount' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='headcount' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             <Card>
-              <CardImg source='../../../images/craveitsnipped.png' />
+              <CardImg className={googleBooksCard.class} source='/images/googlebookssnipped.png' />
+              <CardInfo title='Google Books Search' text='An app that allows the users to search google books and then save books they like to a database' github ='https://github.com/Brigmu/Google-books-search' deployed='https://mygooglebookssearch.herokuapp.com/' />
+              {googleBooksCard.active ? <ViewBtn card='googlebooks' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='googlebooks' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
+            </Card>
+            <Card>
+              <CardImg className={employeeDirectoryCard.class} source='/images/employeedirectorysnipped.png' />
+              <CardInfo title='Employee Directory' text='This is a practice app testing out react state to manage an directory of employees' github='https://github.com/Brigmu/Employee-Directory' deployed='https://brigmu.github.io/Employee-Directory/' />
+              {employeeDirectoryCard.active ? <ViewBtn card='employeedirectory' name='button view-less' text='View less' handleCardClick={handleCardImgClassChange}/> : <ViewBtn card='employeedirectory' name='button view-more' text='View info' handleCardClick={handleCardImgClassChange}/> }
             </Card>
             </div>
           </Wrapper>
@@ -84,10 +135,10 @@ function App() {
                 <p>Phone: 206-734-8405</p>
                 <a href = "https://docs.google.com/document/d/1opgLrcQpAW3ns2WTNB-I0QWtOADd9Hpc9dRN0SPXduI/edit?usp=sharing">Resume</a>
                 <h3>Socials</h3>
-                <img src="images/GitHub-Mark-32px.png" id='Github' />
-                <a href="https://github.com/Brigmu" class="social-text">brigmu</a>
-                <img src="images/LI-Logo.png" id='linkedin' />
-                <a href="https://www.linkedin.com/in/brigham-mueller-709817197/" class="social-text">Brigham Mueller</a>
+                <img src="images/GitHub-Mark-32px.png" id='Github' alt='gitub-logo'/>
+                <a href="https://github.com/Brigmu">brigmu</a>
+                <img src="images/LI-Logo.png" id='linkedin' alt='linkedin-logo'/>
+                <a href="https://www.linkedin.com/in/brigham-mueller-709817197/">Brigham Mueller</a>
             </div>
           </Wrapper>
         </Container>
