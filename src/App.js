@@ -71,7 +71,7 @@ function App() {
           <Wrapper name='about-wrapper' id='about'>
             <Title title='About' />
             <div className='inner-wrapper'>
-            <img src='/images/Portfolio-photo.jpg' alt='profile'></img>
+            <img src='images/Portfolio-photo.jpg' alt='profile'></img>
             <div className='p-div'>
             <p>My name is Brigham Mueller and this website was made to tell a little bit about myself and show what
                     I can do. I am a full-stack web developer, gamer, home chef, and dad joke extraordinaire.
