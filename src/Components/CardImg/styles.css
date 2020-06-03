@@ -1,0 +1,12 @@
+.card-img {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    transition: width 250ms ease-in;
+}
+
+.card-img-active {
+    height: 100%;
+    width: 50%;
+    transition: width 250ms ease-in;
+}

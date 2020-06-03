@@ -1,0 +1,13 @@
+.title{
+    width: 75%;
+    height: 5%;
+    min-height: 100px;
+    color: black;
+    /* background: repeating-linear-gradient(120deg, white 0px, white 50px, blue 250px, blue); */
+    /* background:black;
+    mix-blend-mode: multiply; */
+  }
+  
+  hr{
+    width: 100%;
+  }
