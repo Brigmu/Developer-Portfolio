@@ -1,0 +1,19 @@
+.navbar {
+    border: solid black 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 75px;
+    position: fixed;
+    /* margin-bottom: 75px; */
+    top: 0;
+    left: 0;
+    /* transform: translate(-60px);
+    transition: transform 250ms ease-in; */
+}
+
+.navbar:hover{
+    transform: translate(0px);
+}

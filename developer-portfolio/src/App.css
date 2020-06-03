@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.html{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.test {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+.title{
+  width: 20%;
+  height: 5%;
+  min-height: 100px;
+  color: black;
+  /* background: repeating-linear-gradient(120deg, white 0px, white 50px, blue 250px, blue); */
+  /* background:black;
+  mix-blend-mode: multiply; */
+}
+
+.inner-wrapper{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: repeating-linear-gradient(110deg, white 0px, white 150px, black 150px, black);
+}
+
+.p-div{
+  padding: 50px;
+}
+
+.view-more{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.view-less{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.color-primary {
+  background-color: black;
+  color: white;
+}
+
+.color-secondary {
+  background-color: yellow;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .inner-wrapper{
+    flex-direction: column;
+    background: black;
+  }
+}
