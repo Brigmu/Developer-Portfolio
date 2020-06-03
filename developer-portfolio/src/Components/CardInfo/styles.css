@@ -6,4 +6,7 @@
     height: 100%;
     padding: 20px;
     transition: width 250ms ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

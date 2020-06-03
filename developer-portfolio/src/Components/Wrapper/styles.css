@@ -1,8 +1,14 @@
 .wrapper {
     background: white;
+    position: relative;
     border: solid black 1px;
     margin: 10px 50px 50px 50px;
     box-shadow: black 2px 2px 15px 2px;
+}
+
+.offset{
+    position: absolute;
+    top: -100px;
 }
 
 .about-wrapper {
@@ -10,7 +16,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 65%;
+}
+
+.portfolio-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+}
+
+.contact-wrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
 }
 
 .about-wrapper img {
@@ -31,14 +53,32 @@
 }
 
 .cards-wrapper {
+    box-sizing: border-box;
+    padding: 20px;
     width: 100%;
     display: flex;
+    overflow: scroll;
+    overflow-y: hidden;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: start;
 }
 
 @media screen and (max-width: 480px) {
     .about-wrapper{
         width: 90%;
+    }
+
+    .portfolio-wrapper{
+        width: 90%;
+    }
+
+    .contact-wrapper {
+        width: 90%;
+    }
+
+    .cards-wrapper {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 }
